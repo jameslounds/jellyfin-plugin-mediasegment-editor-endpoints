@@ -17,7 +17,7 @@ namespace JellyfinPluginMediaSegmentEditorEndpoints;
 /// <summary>
 /// The main plugin.
 /// </summary>
-public class Plugin : BasePlugin<PluginConfiguration>, IHasWebPages
+public class Plugin : BasePlugin<PluginConfiguration>
 {
     private IMediaSegmentManager _mediaSegmentsManager;
 
@@ -55,18 +55,4 @@ public class Plugin : BasePlugin<PluginConfiguration>, IHasWebPages
     /// Gets the current plugin instance.
     /// </summary>
     public static Plugin? Instance { get; private set; }
-
-    /// <inheritdoc />
-    public IEnumerable<PluginPageInfo> GetPages()
-    {
-        return
-        [
-            new PluginPageInfo
-            {
-                Name = Name,
-                EmbeddedResourcePath = string.Format(CultureInfo.InvariantCulture, "{0}.Configuration.configPage.html",
-                    GetType().Namespace)
-            }
-        ];
-    }
 }
