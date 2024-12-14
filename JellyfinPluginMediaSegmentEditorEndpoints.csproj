@@ -16,8 +16,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="Configuration\configPage.html" />
-    <EmbeddedResource Include="Configuration\configPage.html" />
+    <Compile Remove="jellyfin-data\**" />
   </ItemGroup>
 
+  <ItemGroup>
+    <EmbeddedResource Remove="jellyfin-data\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="jellyfin-data\**" />
+  </ItemGroup>
 </Project>
